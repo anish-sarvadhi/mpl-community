@@ -1,0 +1,83 @@
+[
+  {
+    "id": "t1",
+    "name": "Rahul Sharma",
+    "location": "Mumbai, India",
+    "title": "Life-Changing Gaming Experience",
+    "content": "MPL has completely changed how I spend my free time. The variety of games and the competitive tournaments keep me engaged for hours. I've won over ₹15,000 in the last month alone! The platform is incredibly user-friendly and the payment system is seamless. I recommend MPL to all my friends who enjoy mobile gaming.",
+    "type": "text",
+    "date": "2023-10-15T10:30:00Z"
+  },
+  {
+    "id": "t2",
+    "name": "Priya Patel",
+    "location": "Delhi, India",
+    "title": "My MPL Journey",
+    "content": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "type": "video",
+    "date": "2023-09-22T14:45:00Z"
+  },
+  {
+    "id": "t3",
+    "name": "Amit Kumar",
+    "location": "Bangalore, India",
+    "title": "Fair Play and Great Support",
+    "content": "The tournaments on MPL are incredibly well organized. I love the fair play environment and the instant withdrawals. The customer support team is also very responsive whenever I've had questions. What sets MPL apart from other gaming platforms is their commitment to creating a safe and fair gaming environment for all players.",
+    "type": "text",
+    "date": "2023-11-05T09:15:00Z"
+  },
+  {
+    "id": "t4",
+    "name": "Sneha Reddy",
+    "location": "Hyderabad, India",
+    "title": "From Skeptic to Believer",
+    "content": "I was skeptical at first, but MPL has proven to be a legitimate platform for gaming enthusiasts. I've made some great friends through the community features and even participated in national tournaments! The social aspects of MPL are what keep me coming back - I've connected with players from all over the country and we regularly compete together.",
+    "type": "text",
+    "date": "2023-10-30T16:20:00Z"
+  },
+  {
+    "id": "t5",
+    "name": "Rajesh Verma",
+    "location": "Pune, India",
+    "title": "Watch My Tournament Win",
+    "content": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "type": "video",
+    "date": "2023-11-10T11:00:00Z"
+  },
+  {
+    "id": "t6",
+    "name": "Ananya Singh",
+    "location": "Kolkata, India",
+    "title": "User-Friendly Interface",
+    "content": "MPL's UI is so intuitive and user-friendly. I appreciate how they keep adding new games and features regularly. The referral program is also great - I've earned bonus cash by inviting my friends! The app runs smoothly even on my older phone, which is impressive considering the graphics quality of some games.",
+    "type": "text",
+    "date": "2023-09-18T13:40:00Z"
+  },
+  {
+    "id": "t7",
+    "name": "Vikram Mehta",
+    "location": "Jaipur, India",
+    "title": "Professional Esports Journey",
+    "content": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "type": "video",
+    "date": "2023-11-20T15:30:00Z"
+  },
+  {
+    "id": "t8",
+    "name": "Neha Gupta",
+    "location": "Chennai, India",
+    "title": "Perfect for Casual Gamers",
+    "content": "As someone who only plays games occasionally, I find MPL perfect for my lifestyle. I can jump in for a quick game during my commute or lunch break. The casual tournaments with smaller entry fees are perfect for players like me who enjoy gaming without the pressure of high stakes. The variety of games means I never get bored!",
+    "type": "text",
+    "date": "2023-11-25T12:10:00Z"
+  },
+  {
+    "id": "t9",
+    "name": "Arjun Kapoor",
+    "location": "Ahmedabad, India",
+    "title": "MPL Changed My Life",
+    "content": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "type": "video",
+    "date": "2023-10-05T09:45:00Z"
+  }
+]

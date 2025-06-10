@@ -1,0 +1,90 @@
+[
+  {
+    "id": "survey1",
+    "title": "Game Experience Feedback",
+    "description": "Help us improve your gaming experience by sharing your thoughts on our latest games.",
+    "type": "multiple_choice",
+    "reward": "50",
+    "dueDate": "2023-12-25T10:30:00Z",
+    "questions": [
+      {
+        "text": "How would you rate your overall experience with MPL games?",
+        "options": ["Excellent", "Good", "Average", "Below Average", "Poor"]
+      },
+      {
+        "text": "Which game category do you enjoy the most?",
+        "options": ["Card Games", "Board Games", "Arcade Games", "Sports Games", "Puzzle Games"]
+      },
+      {
+        "text": "How often do you participate in tournaments?",
+        "options": ["Daily", "Weekly", "Monthly", "Rarely", "Never"]
+      }
+    ]
+  },
+  {
+    "id": "survey2",
+    "title": "App Performance Survey",
+    "description": "Share your feedback on the app's performance to help us optimize your experience.",
+    "type": "poll",
+    "reward": "30",
+    "dueDate": "2023-12-20T14:45:00Z",
+    "questions": [
+      {
+        "text": "Have you experienced any crashes in the last week?",
+        "options": ["Yes", "No"]
+      },
+      {
+        "text": "How would you rate the app's loading speed?",
+        "options": ["Very Fast", "Fast", "Average", "Slow", "Very Slow"]
+      },
+      {
+        "text": "Which feature would you like us to improve first?",
+        "options": ["Game Performance", "UI/UX", "Payment System", "Customer Support", "Tournament System"]
+      }
+    ]
+  },
+  {
+    "id": "survey3",
+    "title": "New Features Wishlist",
+    "description": "Tell us what new features you'd like to see in future updates.",
+    "type": "short_answer",
+    "reward": "100",
+    "dueDate": "2023-12-30T09:15:00Z",
+    "questions": [
+      {
+        "text": "What new game would you like to see added to MPL?",
+        "options": []
+      },
+      {
+        "text": "Describe a feature that would improve your gaming experience.",
+        "options": []
+      },
+      {
+        "text": "How can we make our community platform more engaging for you?",
+        "options": []
+      }
+    ]
+  },
+  {
+    "id": "survey4",
+    "title": "User Satisfaction Survey",
+    "description": "Help us understand your overall satisfaction with MPL services.",
+    "type": "multiple_choice",
+    "reward": "75",
+    "dueDate": "2023-12-15T16:20:00Z",
+    "questions": [
+      {
+        "text": "How likely are you to recommend MPL to a friend?",
+        "options": ["Very Likely", "Likely", "Neutral", "Unlikely", "Very Unlikely"]
+      },
+      {
+        "text": "How satisfied are you with our customer support?",
+        "options": ["Very Satisfied", "Satisfied", "Neutral", "Dissatisfied", "Very Dissatisfied"]
+      },
+      {
+        "text": "What is your primary reason for using MPL?",
+        "options": ["Entertainment", "Winning Money", "Social Interaction", "Skill Development", "Time Pass"]
+      }
+    ]
+  }
+]

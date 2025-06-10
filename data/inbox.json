@@ -1,0 +1,58 @@
+[
+  {
+    "id": "msg1",
+    "title": "Welcome to MPL Community!",
+    "message": "We're excited to have you join our community platform. Explore all the features and connect with fellow gamers. Don't forget to check out our latest tournaments and rewards!",
+    "type": "important",
+    "timestamp": "2023-11-15T10:30:00Z"
+  },
+  {
+    "id": "msg2",
+    "title": "New App Update Available",
+    "message": "We've just released version 5.2.0 of the MPL app with improved performance, bug fixes, and exciting new features. Update now to enjoy a smoother gaming experience!",
+    "type": "product",
+    "timestamp": "2023-11-10T14:45:00Z"
+  },
+  {
+    "id": "msg3",
+    "title": "Introducing: Ludo Supreme",
+    "message": "Get ready for our newest game - Ludo Supreme! Challenge your friends, compete in tournaments, and win big rewards. The game launches tomorrow with special launch bonuses for early players.",
+    "type": "game",
+    "timestamp": "2023-11-05T09:15:00Z"
+  },
+  {
+    "id": "msg4",
+    "title": "Enhanced Wallet Security",
+    "message": "We've upgraded our wallet security with two-factor authentication. Enable it now in your profile settings to keep your winnings safe and secure.",
+    "type": "feature",
+    "timestamp": "2023-10-30T16:20:00Z"
+  },
+  {
+    "id": "msg5",
+    "title": "Weekend Tournament Alert",
+    "message": "Don't miss our mega weekend tournament with a prize pool of ₹10,00,000! Registration is open now and closes in 24 hours. Limited slots available!",
+    "type": "important",
+    "timestamp": "2023-10-27T11:00:00Z"
+  },
+  {
+    "id": "msg6",
+    "title": "Refer & Earn Program Updated",
+    "message": "We've improved our referral program! Now earn ₹100 for each friend who joins and plays their first game. Plus, your friends get a welcome bonus too!",
+    "type": "feature",
+    "timestamp": "2023-10-20T13:40:00Z"
+  },
+  {
+    "id": "msg7",
+    "title": "New Payment Options Added",
+    "message": "We've added UPI, net banking, and more wallet options for smoother transactions. Enjoy faster deposits and withdrawals with your preferred payment method.",
+    "type": "product",
+    "timestamp": "2023-10-15T08:25:00Z"
+  },
+  {
+    "id": "msg8",
+    "title": "Fantasy Cricket Season Starts",
+    "message": "The cricket season is here! Create your dream team and compete in daily contests. New user? Get 100% bonus on your first deposit!",
+    "type": "game",
+    "timestamp": "2023-10-10T15:50:00Z"
+  }
+]

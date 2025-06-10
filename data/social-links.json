@@ -1,0 +1,44 @@
+[
+  {
+    "id": "telegram",
+    "platform": "Telegram",
+    "channelTitle": "MPL Official Community",
+    "description": "Join our Telegram community for instant updates, game tips, and connect with fellow players. Our moderators are available to help with any questions.",
+    "url": "https://t.me/mplofficial"
+  },
+  {
+    "id": "instagram",
+    "platform": "Instagram",
+    "channelTitle": "@mpl_official",
+    "description": "Follow us on Instagram for behind-the-scenes content, game highlights, and exclusive promotions. Tag us in your gameplay moments!",
+    "url": "https://instagram.com/mpl_official"
+  },
+  {
+    "id": "youtube",
+    "platform": "YouTube",
+    "channelTitle": "MPL Gaming",
+    "description": "Subscribe to our YouTube channel for tutorials, gameplay videos, tournament highlights, and announcements from the MPL team.",
+    "url": "https://youtube.com/mplgaming"
+  },
+  {
+    "id": "discord",
+    "platform": "Discord",
+    "channelTitle": "MPL Gaming Hub",
+    "description": "Join our Discord server to chat with other players, find teammates, participate in community events, and get real-time support.",
+    "url": "https://discord.gg/mpl"
+  },
+  {
+    "id": "twitter",
+    "platform": "Twitter",
+    "channelTitle": "@MPL_Official",
+    "description": "Follow us on Twitter for the latest news, updates, and announcements. Join the conversation using #MPLCommunity.",
+    "url": "https://twitter.com/mpl_official"
+  },
+  {
+    "id": "facebook",
+    "platform": "Facebook",
+    "channelTitle": "MPL - Mobile Premier League",
+    "description": "Like our Facebook page for community events, tournaments, and exclusive content. Share your achievements with our community!",
+    "url": "https://facebook.com/mplofficial"
+  }
+]
