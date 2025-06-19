@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Home, Heart, Bell, BarChart2, BookOpen, Trophy } from "lucide-react"
+import { Home, Heart, Bell, BarChart2, BookOpen, Trophy,User } from "lucide-react"
 import { motion } from "framer-motion"
 import { useLanguage } from "./language-provider"
 import { useFirstVisit } from "@/lib/use-first-visit"
@@ -15,12 +15,15 @@ export default function Navigation() {
   const { close } = useMobileMenu()
 
   const navItems = [
+    
     { name: t("common.social"), href: "/", icon: Home },
     { name: t("common.wallOfLove"), href: "/wall-of-love", icon: Heart },
     { name: "Announcements", href: "/inbox", icon: Bell },
     { name: t("common.surveys"), href: "/surveys", icon: BarChart2 },
     { name: t("common.blog"), href: "/blog", icon: BookOpen },
     { name: "Rewards", href: "/rewards", icon: Trophy },
+    { name: "Profile", href: "/profile", icon: User },
+    
   ]
 
   return (

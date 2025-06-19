@@ -12,7 +12,7 @@ import { MobileMenuProvider } from "@/components/mobile-menu-provider";
 import { LanguageProvider } from "@/components/language-provider";
 import { RewardsProvider } from "@/components/rewards-provider";
 import { PageTransition } from "@/components/ui/motion";
-
+import { AuthProvider } from "@/contexts/AuthContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -33,6 +33,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#FF1744" />
       </head>
       <body className={inter.className}>
+      <AuthProvider>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <LanguageProvider>
             <RewardsProvider>
@@ -60,6 +61,7 @@ export default function RootLayout({
             </RewardsProvider>
           </LanguageProvider>
         </ThemeProvider>
+        </AuthProvider>
       </body>
     </html>
   );
