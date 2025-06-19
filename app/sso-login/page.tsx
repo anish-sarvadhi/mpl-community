@@ -39,7 +39,7 @@ const SSOLoginPage = () => {
         // Tokens don't match, verify token with backend
 
         axios
-          .get('http://192.168.2.76:5000/api/v1/auth/verify-token', {
+          .get('https://1q3rk7l6-5000.inc1.devtunnels.ms/api/v1/auth/verify-token', {
             headers: { Authorization: `Bearer ${token}` },
           })
           .then((response) => {
