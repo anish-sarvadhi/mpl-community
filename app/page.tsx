@@ -1,5 +1,12 @@
-import SocialMediaPage from "@/components/social-media-page"
+'use client';
+
+import SocialMediaPage from "@/components/social-media-page";
+import ProtectedRoute from "@/components/ProtectedRoute";
 
 export default function Home() {
-  return <SocialMediaPage />
+  return (
+    <ProtectedRoute>
+      <SocialMediaPage />
+    </ProtectedRoute>
+  );
 }
