@@ -60,7 +60,7 @@ yarn
    Open the file:
 
    ```
-   pages/sso-login.tsx
+   app/sso-login/page.tsx
    ```
 
    Replace the default API URL with your own backend verification endpoint:
@@ -86,4 +86,3 @@ yarn
 * Do **not share the encryption key** publicly.
 * For production, move keys and secrets to **environment variables**.
 * Make sure both client (React Native app) and web use the **same passphrase and encryption logic**.
-```
