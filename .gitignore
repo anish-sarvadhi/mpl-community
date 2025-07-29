@@ -137,3 +137,6 @@ build.sh
 *.njsproj
 *.sln
 *.sw?
+
+
+bun.lock
