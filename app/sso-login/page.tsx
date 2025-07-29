@@ -1,12 +1,11 @@
-/** @format */
-
 "use client";
 
-import { useEffect } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
-import axios from "axios";
 import { useAuth } from "@/contexts/AuthContext";
 import { decryptData } from "@/enc-dec";
+import axios from "axios";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect } from "react";
+import { API_URL } from "../constants/constants";
 
 const SSOLoginPage = () => {
   const { setUser } = useAuth();
@@ -79,12 +78,9 @@ const SSOLoginPage = () => {
       completeLogin(userParams);
     } else {
       axios
-        .get(
-          "https://1q3rk7l6-5000.inc1.devtunnels.ms/api/v1/auth/verify-token",
-          {
-            headers: { Authorization: `Bearer ${token}` },
-          }
-        )
+        .get(`${API_URL}/auth/verify-token`, {
+          headers: { Authorization: `${token}` },
+        })
         .then((response) => {
           const apiUser = response.data.data?.user || response.data.user || {};
           completeLogin({
