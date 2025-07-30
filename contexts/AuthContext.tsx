@@ -1,5 +1,7 @@
-'use client'
-import React, { createContext, useContext, useState, useEffect } from 'react';
+/** @format */
+
+"use client";
+import React, { createContext, useContext, useState, useEffect } from "react";
 
 type User = {
   id: string;
@@ -18,29 +20,31 @@ type AuthContextType = {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
-    const token = localStorage.getItem('authToken');
-    const userData = localStorage.getItem('userData');
+    const token = localStorage.getItem("authToken");
+    const userData = localStorage.getItem("userData");
     if (token && userData) {
       try {
         const parsedUser = JSON.parse(userData);
         setUser({ ...parsedUser, token });
       } catch (error) {
-        console.error('Error parsing user data:', error);
-        localStorage.removeItem('authToken');
-        localStorage.removeItem('userData');
+        console.error("Error parsing user data:", error);
+        localStorage.removeItem("authToken");
+        localStorage.removeItem("userData");
       }
     }
   }, []);
 
   const logout = () => {
-    localStorage.removeItem('authToken');
-    localStorage.removeItem('userData');
+    localStorage.removeItem("authToken");
+    localStorage.removeItem("userData");
     setUser(null);
-    window.parent.postMessage({ action: 'login_required' }, '*');
+    window.parent.postMessage({ action: "login_required-5" }, "*");
   };
 
   return (
@@ -53,7 +57,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (!context) {
-    throw new Error('useAuth must be used within an AuthProvider');
+    throw new Error("useAuth must be used within an AuthProvider");
   }
   return context;
 };

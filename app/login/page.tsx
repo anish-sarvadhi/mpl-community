@@ -1,8 +1,10 @@
-'use client';
+/** @format */
 
-import { useEffect } from 'react';
-import { useAuth } from '@/contexts/AuthContext';
-import { useRouter } from 'next/navigation';
+"use client";
+
+import { useEffect } from "react";
+import { useAuth } from "@/contexts/AuthContext";
+import { useRouter } from "next/navigation";
 
 const LoginPage = () => {
   const { user } = useAuth();
@@ -10,9 +12,9 @@ const LoginPage = () => {
 
   useEffect(() => {
     if (user) {
-      router.push('/')
+      router.push("/");
     } else {
-      window.parent.postMessage({ action: 'login_required' }, '*');
+      window.parent.postMessage({ action: "login_required-1" }, "*");
     }
   }, [user, router]);
 
