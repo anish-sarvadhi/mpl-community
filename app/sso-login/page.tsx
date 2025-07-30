@@ -18,7 +18,7 @@ const SSOLoginPage = () => {
     const encrypted = searchParams.get("data");
 
     if (!encrypted) {
-      window.parent.postMessage({ action: "login_required-2" }, "*");
+      window.parent.postMessage({ action: "login_required" }, "*");
       router.push("/login");
       return;
     }
@@ -32,7 +32,7 @@ const SSOLoginPage = () => {
       }
     } catch (error) {
       console.error("Failed to decrypt SSO payload:", error);
-      window.parent.postMessage({ action: "login_required-3" }, "*");
+      window.parent.postMessage({ action: "login_required" }, "*");
       router.push("/login");
       return;
     }
@@ -95,7 +95,7 @@ const SSOLoginPage = () => {
           localStorage.removeItem("authToken");
           localStorage.removeItem("userData");
           setUser(null);
-          window.parent.postMessage({ action: "login_required-4" }, "*");
+          window.parent.postMessage({ action: "login_required" }, "*");
           router.push(return_url || "/login");
         });
     }

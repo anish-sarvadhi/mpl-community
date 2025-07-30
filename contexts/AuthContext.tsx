@@ -44,7 +44,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     localStorage.removeItem("authToken");
     localStorage.removeItem("userData");
     setUser(null);
-    window.parent.postMessage({ action: "login_required-5" }, "*");
+    window.parent.postMessage({ action: "login_required" }, "*");
   };
 
   return (

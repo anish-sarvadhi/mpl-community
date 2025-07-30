@@ -14,7 +14,7 @@ const LoginPage = () => {
     if (user) {
       router.push("/");
     } else {
-      window.parent.postMessage({ action: "login_required-1" }, "*");
+      window.parent.postMessage({ action: "login_required" }, "*");
     }
   }, [user, router]);
 
