@@ -8,6 +8,7 @@ import axios from "axios";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import { API_URL } from "../constants/constants";
+import { sendMessageToApp } from "@/lib/sendMessage";
 
 const SSOLoginPage = () => {
   const { setUser } = useAuth();
@@ -18,7 +19,7 @@ const SSOLoginPage = () => {
     const encrypted = searchParams.get("data");
 
     if (!encrypted) {
-      window.parent.postMessage({ action: "login_required" }, "*");
+      sendMessageToApp({ action: "login_required" });
       router.push("/login");
       return;
     }
@@ -32,7 +33,7 @@ const SSOLoginPage = () => {
       }
     } catch (error) {
       console.error("Failed to decrypt SSO payload:", error);
-      window.parent.postMessage({ action: "login_required" }, "*");
+      sendMessageToApp({ action: "login_required" });
       router.push("/login");
       return;
     }
@@ -55,13 +56,14 @@ const SSOLoginPage = () => {
       !email ||
       !token
     ) {
+      sendMessageToApp({ action: "login_required" });
       router.push("/login");
       return;
     }
 
     const storedToken = localStorage.getItem("authToken");
 
-    const completeLogin = (finalUser: typeof userParams) => {
+    const completeLogin = (finalUser: Partial<typeof userParams>) => {
       const newUserData = {
         id: finalUser.id || user_id,
         first_name: finalUser.first_name || first_name,
@@ -76,29 +78,71 @@ const SSOLoginPage = () => {
       router.push("/");
     };
 
-    if (storedToken === token) {
-      completeLogin(userParams);
-    } else {
-      axios
-        .get(`${API_URL}/auth/verify-token`, {
-          headers: { Authorization: `${token}` },
-        })
-        .then((response) => {
-          const apiUser = response.data.data?.user || response.data.user || {};
-          completeLogin({
-            ...apiUser,
-            token,
-          });
-        })
-        .catch((error) => {
-          console.error("Token verification failed:", error);
-          localStorage.removeItem("authToken");
-          localStorage.removeItem("userData");
-          setUser(null);
-          window.parent.postMessage({ action: "login_required" }, "*");
-          router.push(return_url || "/login");
+    // const verifyAndLogin = async () => {
+    //   try {
+    //     console.log("Verifying token with API:", token);
+
+    //     const response = await axios.get(`${API_URL}/auth/verify-token`, {
+    //       headers: { Authorization: token },
+    //     });
+
+    //     // Ensure user object exists
+    //     const apiUser = response?.data?.data?.user || response?.data?.user;
+
+    //     if (!apiUser) {
+    //       throw new Error("No user returned from verify-token API");
+    //     }
+
+    //     completeLogin({ ...apiUser, token });
+    //   } catch (error) {
+    //     console.error(
+    //       "Token verification failed or malformed response:",
+    //       error
+    //     );
+    //     localStorage.removeItem("authToken");
+    //     localStorage.removeItem("userData");
+    //     setUser(null);
+    //     // sendMessageToApp({ action: "login_required" });
+    //     router.push(return_url || "/login");
+    //   }
+    // };
+
+    const verifyAndLogin = async () => {
+      try {
+        console.log("Verifying token with API:", token);
+
+        const response = await axios.get(`${API_URL}/auth/verify-token`, {
+          headers: {
+            Authorization: `${token}`,
+          },
         });
-    }
+
+        const apiUser = response?.data?.data?.user || response?.data?.user;
+
+        if (!apiUser) {
+          throw new Error("No user returned from verify-token API");
+        }
+
+        completeLogin({ ...apiUser, token });
+      } catch (error) {
+        console.error(
+          "Token verification failed or malformed response:",
+          error
+        );
+        localStorage.removeItem("authToken");
+        localStorage.removeItem("userData");
+        setUser(null);
+
+        // Platform-specific safe message handling
+        try {
+          // sendMessageToApp({ action: "login_required" });
+        } catch (e) {
+          console.warn("sendMessageToApp failed:", e);
+        }
+      }
+    };
+
+    verifyAndLogin();
   }, [searchParams, setUser, router]);
 
   return <div />;

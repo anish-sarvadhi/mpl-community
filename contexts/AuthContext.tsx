@@ -1,6 +1,7 @@
 /** @format */
 
 "use client";
+import { sendMessageToApp } from "@/lib/sendMessage";
 import React, { createContext, useContext, useState, useEffect } from "react";
 
 type User = {
@@ -44,7 +45,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     localStorage.removeItem("authToken");
     localStorage.removeItem("userData");
     setUser(null);
-    window.parent.postMessage({ action: "login_required" }, "*");
+    sendMessageToApp({ action: "login_required" });
   };
 
   return (

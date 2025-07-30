@@ -5,6 +5,7 @@
 import { useEffect } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useRouter } from "next/navigation";
+import { sendMessageToApp } from "@/lib/sendMessage";
 
 const LoginPage = () => {
   const { user } = useAuth();
@@ -14,7 +15,7 @@ const LoginPage = () => {
     if (user) {
       router.push("/");
     } else {
-      window.parent.postMessage({ action: "login_required" }, "*");
+      // sendMessageToApp({ action: "login_required" });
     }
   }, [user, router]);
 
