@@ -2,10 +2,9 @@
 
 "use client";
 
-import { useEffect } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useRouter } from "next/navigation";
-import { sendMessageToApp } from "@/lib/sendMessage";
+import { useEffect } from "react";
 
 const LoginPage = () => {
   const { user } = useAuth();
