@@ -360,6 +360,7 @@ interface BlogItem {
 
 export default function Blog() {
   const [blogs, setBlogs] = useState<BlogItem[]>([]);
+  const [loading, setLoading] = useState(true);
   const [activeFilter, setActiveFilter] = useState<string>("all");
   const [searchTerm, setSearchTerm] = useState("");
   const [sortBy, setSortBy] = useState<"latest" | "popular">("latest");
@@ -368,9 +369,12 @@ export default function Blog() {
   const gridRef = useRef<HTMLDivElement>(null);
   const [visibleBlogs, setVisibleBlogs] = useState(6);
   const [hasMore, setHasMore] = useState(true);
+  const [loadTime, setLoadTime] = useState<number | null>(null);
 
   useEffect(() => {
     const fetchBlogs = async () => {
+      const start = performance.now(); // ✅ Start timer
+
       try {
         const token = localStorage.getItem("authToken");
         const response = await axios.get(`${API_URL}/content`, {
@@ -378,8 +382,11 @@ export default function Blog() {
             Authorization: `${token}`,
           },
         });
-        const data = response.data?.data || [];
 
+        const end = performance.now(); // ✅ End timer
+        setLoadTime(Math.round(end - start)); // ✅ Set load time in ms
+
+        const data = response.data?.data || [];
         const blogsWithViews = data.map((blog: BlogItem) => ({
           ...blog,
           views: Math.floor(Math.random() * 1000) + 100,
@@ -389,6 +396,8 @@ export default function Blog() {
       } catch (error) {
         console.error("Error fetching blogs:", error);
         setBlogs([]);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -444,8 +453,16 @@ export default function Blog() {
     return offsets[Math.floor(Math.random() * offsets.length)];
   };
 
+  if (loading) return <div className="text-center py-10">Loading...</div>;
+
   return (
     <div className="space-y-6 max-w-6xl mx-auto">
+      {loadTime !== null && (
+        <div className="text-sm text-muted-foreground text-right">
+          Data loaded in <span className="font-medium">{loadTime} ms</span>
+        </div>
+      )}
+
       <MotionDiv
         initial={isFirstVisit ? { opacity: 0, y: 20 } : { opacity: 1, y: 0 }}
         animate={{ opacity: 1, y: 0 }}
@@ -562,7 +579,7 @@ export default function Blog() {
 
                 return (
                   <motion.div
-                    key={blog.id}
+                    key={blog?._id}
                     className={`${sizeClass}`}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
